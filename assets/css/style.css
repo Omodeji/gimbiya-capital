@@ -1,0 +1,1065 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --orange-color: #d35400;
+  --black-color-light: #f9f9f6;
+  --green-color: #145a32;
+  --white-color: #fff;
+  --body-color: hsl(220, 100%, 97%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --normal-font-size: .938rem;
+
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1024px) {
+  :root {
+    --normal-font-size: 1rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+}
+
+ul {
+  list-style: none;
+  /* Color highlighting when pressed on mobile devices */
+  /*-webkit-tap-highlight-color: transparent;*/
+}
+
+a {
+  text-decoration: none;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+/*=============== HEADER ===============*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--orange-color);
+  box-shadow: 0 2px 16px hsla(220, 32%, 8%, .3);
+  /* z-index: var(--z-fixed); */
+  z-index: 1000;
+}
+
+/*=============== NAV ===============*/
+.nav {
+  height: var(--header-height);
+}
+
+.nav__logo,
+.nav__burger,
+.nav__close {
+  color: var(--white-color);
+}
+
+.nav__data {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  display: inline-flex;
+  align-items: center;
+  column-gap: .25rem;
+  font-weight: var(--font-semi-bold);
+  /* Color highlighting when pressed on mobile devices */
+  /*-webkit-tap-highlight-color: transparent;*/
+}
+
+.nav__logo i {
+  font-weight: initial;
+  font-size: 1.25rem;
+}
+
+.nav__toggle {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+
+.nav__burger,
+.nav__close {
+  position: absolute;
+  width: max-content;
+  height: max-content;
+  inset: 0;
+  margin: auto;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: opacity .1s, transform .4s;
+}
+
+.nav__close {
+  opacity: 0;
+}
+
+/* Navigation for mobile devices */
+@media screen and (max-width: 1118px) {
+  .nav__menu {
+    position: absolute;
+    left: 0;
+    top: 2.5rem;
+    width: 100%;
+    height: calc(100vh - 3.5rem);
+    overflow: auto;
+    pointer-events: none;
+    opacity: 0;
+    transition: top .4s, opacity .3s;
+  }
+
+  .nav__menu::-webkit-scrollbar {
+    width: 0;
+  }
+
+  .nav__list {
+    background-color: var(--orange-color);
+    padding-top: 1rem;
+  }
+}
+
+.nav__link {
+  color: var(--white-color);
+  background-color: var(--orange-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color .3s;
+}
+
+.nav__link:hover {
+  background-color: var(--black-color-light);
+  color: black;
+}
+
+/* Show menu */
+.show-menu {
+  opacity: 1;
+  top: 3.5rem;
+  pointer-events: initial;
+}
+
+/* Show icon */
+.show-icon .nav__burger {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+.show-icon .nav__close {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+/*=============== DROPDOWN ===============*/
+.dropdown__item {
+  cursor: pointer;
+}
+
+.dropdown__arrow {
+  font-size: 1.25rem;
+  font-weight: initial;
+  transition: transform .4s;
+}
+
+.dropdown__link,
+.dropdown__sublink {
+  padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+  color: black;
+  background-color: var(--black-color-light);
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+  font-weight: var(--font-semi-bold);
+  transition: background-color .3s;
+}
+
+.dropdown__link i,
+.dropdown__sublink i {
+  font-size: 1.25rem;
+  font-weight: initial;
+}
+
+.dropdown__link:hover,
+.dropdown__sublink:hover {
+  background-color: var(--orange-color);
+  color: black;
+}
+
+.dropdown__menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease-out;
+}
+
+/* Show dropdown menu & submenu */
+.dropdown__item:hover .dropdown__menu {
+  max-height: 1000px;
+  transition: max-height .4s ease-in;
+  color: black;
+}
+
+/* Rotate dropdown icon */
+.dropdown__item:hover .dropdown__arrow {
+  transform: rotate(180deg);
+  color: black;
+}
+
+
+.dropdown__sublink {
+  background-color: var(--black-color-lighten);
+}
+
+
+
+/* Our Investor */
+
+/* investor banner */
+.investors-banner {
+  background-color: var(--green-color);
+  color: white;
+  font-family: var(--body-font);
+  text-align: center;
+  padding: 20px;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.investors-banner h2 {
+  font-weight: bold;
+  font-size: 3em;
+}
+
+.founder-section {
+  padding: 80px 20px;
+  background-color: #ffffff;
+}
+
+.founder {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: var(--body-font);
+}
+
+.founder-intro {
+  font-weight: 700;
+  color: var(--green-color);
+  line-height: 1.5;
+  font-size: 1.3rem;
+  margin-bottom: 50px;
+}
+
+.founder-card {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  max-width: 320px;
+  margin: 0 auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.founder-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.founder-image {
+  margin-bottom: 20px;
+}
+
+.founder-image img {
+  width: 160px;
+  height: 160px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.founder-name {
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+
+.founder-role {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #6b6b6b;
+}
+
+@media (max-width: 768px) {
+  .founder-intro {
+    font-size: 1.1rem;
+  }
+
+  .founder-card {
+    padding: 30px 20px;
+  }
+}
+
+
+
+/* Main Section Heading (Big)  */
+.how-we-work-headings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--green-color);
+  color: white;
+  font-family: var(--body-font);
+  margin: 20px 0;
+}
+
+.left-bar-and-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* outline: 1px solid var(--green-color); */
+}
+
+.left-bar {
+  background-color: var(--orange-color);
+  width: 5px;
+  height: 80px;
+}
+
+.left-bar-and-heading .heading {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+.heading-text {
+  font-size: 20px;
+}
+
+/* Our Investors */
+.our-investors {
+  font-family: var(--body-font);
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #f8f9f8;
+}
+
+/* Container */
+.our-investors-row {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.investor-card {
+  background: #ffffff;
+  padding: 35px 25px;
+  border-radius: 18px;
+  width: 300px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.investor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.investor-image {
+  margin-bottom: 20px;
+}
+
+.investor-image img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.investor-name {
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.investor-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #635f5f;
+}
+
+@media (max-width: 768px) {
+  .investor-card {
+    width: 100%;
+    max-width: 340px;
+  }
+}
+
+
+/* Contact Us Section */
+.contact-us-banner {
+  background-color: var(--green-color);
+  color: white;
+  text-align: center;
+  font-family: var(--body-font);
+  padding: 40px;
+  margin-bottom: 40px;
+}
+
+.contact-us-banner h2 {
+  font-weight: bold;
+  font-size: 3em;
+  margin-bottom: 40px;
+}
+
+.contact-us-banner q {
+  font-style: italic;
+}
+
+.contact-us-banner a {
+  display: block;
+  width: 30%;
+  margin: 40px auto 0 auto;
+  background-color: white;
+  padding: 10px 15px;
+  color: var(--green-color);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+/* investment criteria  */
+/* Banner */
+.banner {
+  height: 70vh;
+  background-image: url("../img/banner.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: var(--body-font);
+  text-align: center;
+}
+
+.banner h2 {
+  text-transform: capitalize;
+  font-size: 3em;
+}
+
+.investment-criteria {
+  text-align: center;
+  font-family: var(--body-font);
+  padding: 60px 20px;
+}
+
+.investment-criteria h3 {
+  text-transform: capitalize;
+  color: var(--green-color);
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+}
+
+.creteria-box-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.criteria-box {
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 16px;
+  max-width: 320px;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.criteria-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.criteria-icon-box {
+  background-color: #D9F3E4;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 20px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.criteria-icon-box i {
+  font-size: 42px;
+  color: var(--green-color);
+}
+
+.criteria-box h5 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.criteria-box h6 {
+  color: #635F5F;
+  font-weight: 600;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.criteria-box p {
+  color: #635F5F;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* little screen */
+@media (max-width: 768px) {
+  .investment-criteria h3 {
+    font-size: 1.5rem;
+  }
+
+  .criteria-box {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .creteria-box-container {
+    gap: 50px;
+  }
+}
+
+
+
+/* our advisors */
+.advisors-banner {
+  background-color: var(--green-color);
+  color: white;
+  font-family: var(--body-font);
+  text-align: center;
+  padding: 60px 20px;
+  min-height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.advisors-banner h2 {
+  font-weight: 700;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  max-width: 900px;
+  line-height: 1.3;
+}
+
+.how-we-work-headings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 40px;
+  background-color: var(--green-color);
+  color: #fff;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.left-bar-and-heading {
+  display: flex;
+  align-items: center;
+}
+
+.left-bar {
+  background-color: var(--orange-color);
+  width: 5px;
+  height: 90px;
+  border-radius: 10px;
+}
+
+.left-bar-and-heading .heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-left: 20px;
+  line-height: 1.1;
+}
+
+.heading-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 520px;
+  opacity: 0.95;
+}
+
+/* Our Advisor  */
+.our-advisors {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.our-advisors-profile-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Advisor Card */
+.advisor-profile {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 18px;
+  width: 280px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.advisor-profile:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+.advisor-profile figure {
+  margin-bottom: 20px;
+}
+
+.advisor-profile img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.advisor-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* contact us  */
+.contact-us-banner {
+  background-color: var(--green-color);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  margin-top: 60px;
+}
+
+.contact-us-banner h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.contact-us-banner q {
+  font-size: 1.1rem;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.contact-us-btn {
+  display: inline-block;
+  margin-top: 40px;
+  background-color: #fff;
+  padding: 14px 40px;
+  color: var(--green-color);
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-us-btn:hover {
+  background-color: var(--orange-color);
+  color: #fff;
+}
+
+/* screen screen  */
+@media (max-width: 768px) {
+  .how-we-work-headings {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .left-bar {
+    display: none;
+  }
+
+  .left-bar-and-heading .heading {
+    margin-left: 0;
+    font-size: 2rem;
+  }
+
+  .heading-text {
+    font-size: 1rem;
+  }
+
+  .contact-us-banner h2 {
+    font-size: 2rem;
+  }
+}
+
+/* WhyFoundersChoseUS  */
+.banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)),
+    url("../img/banner.jpg") center/cover no-repeat;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--body-font);
+  text-align: center;
+  color: #fff;
+}
+
+.banner h3 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.about-the-founders {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 40px 30px;
+  text-align: center;
+  font-family: var(--body-font);
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.about-the-founders h3 {
+  font-weight: 700;
+  color: var(--main-app-color);
+  margin-bottom: 20px;
+}
+
+.about-the-founders q {
+  display: block;
+  font-style: italic;
+  line-height: 1.6;
+  color: #555;
+}
+
+.what-makes-us-different {
+  padding: 80px 20px;
+  text-align: center;
+  font-family: var(--body-font);
+  background: #f8f9f8;
+}
+
+.what-makes-us-different h3 {
+  font-weight: 700;
+  color: var(--main-app-color);
+  margin-bottom: 50px;
+  text-transform: capitalize;
+}
+
+.difference-box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.difference-box {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 18px;
+  max-width: 420px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.difference-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.icon-box {
+  background-color: #D9F3E4;
+  padding: 18px;
+  border-radius: 14px;
+}
+
+.icon-box i {
+  font-size: 32px;
+  color: var(--green-color);
+}
+
+.difference-text h6 {
+  color: var(--green-color);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+}
+
+.difference-text p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.investment-criteria {
+  padding: 80px 20px;
+  text-align: center;
+  font-family: var(--green-color);
+}
+
+.investment-criteria h2,
+.investment-criteria h3 {
+  color: var(--green-color);
+  font-weight: 800;
+}
+
+.creteria-box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.criteria-box {
+  background: #ffffff;
+  padding: 35px 25px;
+  border-radius: 20px;
+  width: 300px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.criteria-icon-box {
+  background-color: #D9F3E4;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 20px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.criteria-icon-box i {
+  font-size: 40px;
+  color: var(--green-color);
+}
+
+.criteria-box h5 {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.criteria-box h6 {
+  color: #777;
+  margin-bottom: 12px;
+}
+
+.criteria-box p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.preferred-sectors {
+  max-width: 900px;
+  margin: 80px auto;
+  font-family: var(--body-font);
+}
+
+.preferred-sectors h3 {
+  text-align: center;
+  color: var(--green-color);
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+.preferred-sector-box {
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.preferred-sector-icon-box {
+  background-color: #D9F3E4;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.preferred-sector-icon-box i {
+  font-size: 28px;
+  color: var(--green-color);
+}
+
+.preferred-sector-text h5 {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.preferred-sector-text p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+
+  .difference-box {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .difference-text {
+    text-align: center;
+  }
+
+  .difference-box,
+  .preferred-sector-box {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 340px) {
+  .container {
+    margin-inline: 1rem;
+  }
+
+  .nav__link {
+    padding-inline: 1rem;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1118px) {
+  .container {
+    margin-inline: auto;
+  }
+
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav__toggle {
+    display: none;
+  }
+
+  .nav__list {
+    height: 100%;
+    display: flex;
+    column-gap: 3rem;
+  }
+
+  .nav__link {
+    height: 100%;
+    padding: 0;
+    justify-content: initial;
+    column-gap: .25rem;
+  }
+
+  .nav__link:hover {
+    background-color: transparent;
+    color: black;
+  }
+
+  .dropdown__item {
+    position: relative;
+  }
+
+  .dropdown__menu {
+    max-height: initial;
+    overflow: initial;
+    position: absolute;
+    left: 0;
+    top: 6rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s, top .3s;
+  }
+
+  .dropdown__link,
+  .dropdown__sublink {
+    padding-inline: 1rem 3.5rem;
+  }
+
+  .dropdown__link {
+    padding-inline: 1rem;
+  }
+
+
+
+  /* Show dropdown menu */
+  .dropdown__item:hover .dropdown__menu {
+    color: black;
+    opacity: 1;
+    top: 5.5rem;
+    pointer-events: initial;
+    transition: top .3s;
+  }
+
+
+
+
+}

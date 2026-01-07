@@ -1,0 +1,121 @@
+.about-banner {
+    background-color: #145a32;
+    color: #ffffff;
+    padding: 100px 20px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+
+.about-banner-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-banner h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.about-banner p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    opacity: 0.95;
+}
+
+.by-the-numbers {
+    padding: 80px 20px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    background-color: #f8f9f8;
+}
+
+.section-title {
+    color: #145a32;
+    font-weight: 800;
+    margin-bottom: 50px;
+}
+
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.stat-card {
+    background: #ffffff;
+    padding: 30px 25px;
+    border-radius: 18px;
+    width: 220px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.stat-card h2 {
+    color: #145a32;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.stat-card p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.how-we-partner {
+    padding: 80px 20px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    background-color: #ffffff;
+}
+
+.section-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #145a32;
+    margin-bottom: 10px;
+}
+
+.how-we-partner h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #145a32;
+    margin-bottom: 50px;
+}
+
+.partnership-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.partnership-card {
+    background: #ffffff;
+    padding: 35px 30px;
+    border-radius: 20px;
+    max-width: 360px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    text-align: left;
+}
+
+.partnership-card h4 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #145a32;
+}
+
+.partnership-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .partnership-card {
+        text-align: center;
+    }
+}
