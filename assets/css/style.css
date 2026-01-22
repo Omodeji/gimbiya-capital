@@ -146,6 +146,24 @@ a {
   }
 }
 
+/* Hide dropdowns by default */
+.dropdown__menu {
+  display: none;
+  flex-direction: column;
+  padding-left: 0;
+}
+
+/* Show dropdown when toggled */
+.dropdown__menu.show-dropdown {
+  display: flex;
+}
+
+/* Optional: rotate arrow when active */
+.active-arrow .dropdown__arrow {
+  transform: rotate(180deg);
+  transition: 0.3s;
+}
+
 .nav__link {
   color: var(--white-color);
   background-color: var(--orange-color);
