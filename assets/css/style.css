@@ -146,7 +146,7 @@ a {
   }
 }
 
-/* Hide dropdowns by default */
+/* Hide dropdowns by default
 .dropdown__menu {
   display: none;
   flex-direction: column;
@@ -154,14 +154,31 @@ a {
 }
 
 /* Show dropdown when toggled */
-.dropdown__menu.show-dropdown {
+/* .dropdown__menu.show-dropdown {
   display: flex;
-}
+} */
 
 /* Optional: rotate arrow when active */
-.active-arrow .dropdown__arrow {
+/* .active-arrow .dropdown__arrow {
   transform: rotate(180deg);
   transition: 0.3s;
+} */
+
+/* This is likely what you have for Desktop */
+.dropdown__item:hover .dropdown__menu {
+    height: max-content;
+    opacity: 1;
+}
+
+/* ADD THIS for Mobile Click */
+.show-dropdown .dropdown__menu {
+    height: max-content;
+    opacity: 1;
+}
+
+/* Optional: Rotate the arrow when open */
+.show-dropdown .dropdown__arrow {
+    transform: rotate(180deg);
 }
 
 .nav__link {
