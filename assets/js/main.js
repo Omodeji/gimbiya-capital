@@ -18,21 +18,21 @@ dropdownItems.forEach((item) => {
     const dropdownButton = item.querySelector('.nav__link')
 
     dropdownButton.addEventListener('click', (e) => {
-        // Only run this click logic on mobile/tablets (typically < 1118px)
+        // 1. If screen is mobile size
         if (window.innerWidth < 1118) {
-            e.preventDefault() // Prevents "About" from trying to go to a link immediately
-            
-            const showDropdown = item.classList.contains('show-dropdown')
+            e.preventDefault();
 
-            // Close any other open dropdowns first
-            document.querySelectorAll('.dropdown__item').forEach((el) => {
-                if (el !== item) el.classList.remove('show-dropdown')
+            // 2. Check if this specific menu is already open
+            const isOpen = item.classList.contains('show-dropdown')
+
+            // 3. Close ALL dropdowns first (clears the deck)
+            dropdownItems.forEach((el) => {
+                el.classList.remove('show-dropdown')
             })
 
-            // Toggle the current one
-            if (showDropdown) {
-                item.classList.remove('show-dropdown')
-            } else {
+            // 4. If the one we clicked WAS NOT open, open it now.
+            // If it WAS open, it stays closed (because of step 3).
+            if (!isOpen) {
                 item.classList.add('show-dropdown')
             }
         }
