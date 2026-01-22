@@ -1,0 +1,273 @@
+.space {
+    width: 100%;
+    background-color: white;
+    height: 100px;
+}
+
+/* Banner */
+.bannerr-section {
+    background-color: #F9F9F6;
+}
+
+.bannerr {
+    padding: 80px 16px;
+    font-family: var(--body-font);
+    text-align: center;
+    color: #145a32;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.bannerr-heading {
+    font-size: clamp(2.4rem, 4vw, 3.2rem);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.bannerr-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 620px;
+    margin: 0 auto 40px;
+}
+
+/* CTA */
+.ctaa-btns {
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.cta-sub {
+    font-size: 0.95rem;
+    margin-bottom: 22px;
+}
+
+.ctaa-btns a {
+    display: inli ne-block;
+    background-color: #145a32;
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 26px;
+    border-radius: 22px;
+    font-weight: 600;
+}
+
+.ctaa-btns a:hover {
+    background-color: #d14e00;
+}
+
+/* Who We Are */
+.who_we_are {
+    font-family: var(--body-font);
+    text-align: center;
+    padding: 60px 16px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.who_we_are h3 {
+    color: #145a32;
+    font-weight: 600;
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+.who_we_are p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* What We Believe */
+.what-we-believe {
+    font-family: var(--body-font);
+    text-align: center;
+    padding: 60px 16px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.what-we-believe h3 {
+    color: #145a32;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin-bottom: 40px;
+}
+
+/* Belief text */
+.what-we-believe p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 650px;
+    margin: 0 auto 28px;
+    color: #222;
+}
+
+/* Number */
+.what-we-believe p span {
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #145a32;
+    font-family: "Podkova", serif;
+    margin-right: 6px;
+}
+
+/* Where We Focus */
+.where-we-focus {
+    font-family: var(--body-font);
+    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 16px;
+}
+
+.where-we-focus h3 {
+    color: #145a32;
+    font-weight: 600;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin-bottom: 16px;
+}
+
+.focus-intro {
+    max-width: 700px;
+    margin: 0 auto 50px;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Green Box */
+.business-criteria {
+    background-color: #145a32;
+    padding: 50px 20px;
+    border-radius: 30px;
+}
+
+.business-criteria-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 2fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Each item */
+.criteria {
+    text-align: center;
+}
+
+.criteria-icon-and-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+/* Icon */
+.criteria i {
+    font-size: 28px;
+    color: #79EFBC;
+    background-color: #074a24;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* Text */
+.criteria h5 {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Founder Profile */
+.founder-profile-section {
+    font-family: var(--body-font);
+    padding: 60px 20px;
+    background-color: #f9f9f6;
+}
+
+.founder-profile h3 {
+    font-weight: 600;
+    color: #145a32;
+    font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.founder-profile-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.founder-profile-container figure {
+    flex: 0 0 300px;
+    margin: 0;
+}
+
+.founder-profile-container img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.founder-text {
+    flex: 1;
+    max-width: 600px;
+    text-align: left;
+    padding: 20px;
+}
+
+.founder-text p {
+    line-height: 1.7;
+    color: #1f3d2b;
+}
+
+.founder-name-custom {
+    font-weight: 600;
+    color: #145a32;
+}
+
+.learn-more {
+    display: inline-block;
+    margin-top: 25px;
+    background-color: #145a32;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 32px;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.learn-more:hover {
+    background-color: #d14e00;
+    transform: translateY(-2px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .founder-profile-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .founder-text {
+        text-align: center;
+        padding: 20px 0;
+    }
+}

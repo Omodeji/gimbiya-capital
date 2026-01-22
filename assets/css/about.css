@@ -3,7 +3,7 @@
     color: #ffffff;
     padding: 100px 20px;
     text-align: center;
-    font-family: "Poppins", sans-serif;
+    font-family: var(--body-font);
 }
 
 .about-banner-content {
@@ -13,7 +13,7 @@
 
 .about-banner h1 {
     font-size: clamp(2.2rem, 5vw, 3.5rem);
-    font-weight: 800;
+    font-weight: 600;
     margin-bottom: 20px;
 }
 
@@ -26,13 +26,13 @@
 .by-the-numbers {
     padding: 80px 20px;
     text-align: center;
-    font-family: "Poppins", sans-serif;
+    font-family: var(--body-font);
     background-color: #f8f9f8;
 }
 
 .section-title {
     color: #145a32;
-    font-weight: 800;
+    font-weight: 600;
     margin-bottom: 50px;
 }
 
@@ -54,7 +54,7 @@
 .stat-card h2 {
     color: #145a32;
     font-size: 2rem;
-    font-weight: 800;
+    font-weight: 600;
     margin-bottom: 8px;
 }
 
@@ -66,7 +66,7 @@
 .how-we-partner {
     padding: 80px 20px;
     text-align: center;
-    font-family: "Poppins", sans-serif;
+    font-family: var(--body-font);
     background-color: #ffffff;
 }
 
@@ -81,7 +81,7 @@
 
 .how-we-partner h2 {
     font-size: 2rem;
-    font-weight: 800;
+    font-weight: 600;
     color: #145a32;
     margin-bottom: 50px;
 }
